@@ -25,3 +25,20 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Deployment
+
+- npm run build:ssr
+- PORT=3201 node ./dist/angularUniversal/server/main.js
+
+* run with pm2 or node mon
+
+## Note
+
+- ตัวอย่าง: Server side rendering with Angular Universal
+- ตัวอย่าง: Http Request without server side
+- ตัวอย่าง: Press back history page same scrollbar
+- ตัวอย่าง: Multiple Layouts
+- ตัวอย่าง: Clean architect
+- ตัวอย่าง: Multiple environment development, production
+- ตัวอย่าง: deployment and custom port

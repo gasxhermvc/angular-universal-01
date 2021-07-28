@@ -1,0 +1,28 @@
+<h3>Users Length : {{ dataSource?.length ?? 0 }}</h3>
+<ul class="list-group">
+  <ng-container *ngFor="let user of dataSource">
+    <li class="list-group-item">{{ user.name }} / {{ user.username }}</li>
+  </ng-container>
+</ul>
+<button type="button" (click)="fetchData()">Fetching</button>
+<h3>Posts length : {{ posts?.length ?? 0 }}</h3>
+<pre>
+  {{ (posts && posts.length > 0 ? posts[0] : {}) | json }}
+</pre>
+<ul class="list-group">
+  <ng-container *ngIf="!fetching; else Loading">
+    <ng-container *ngFor="let post of posts">
+      <li
+        class="list-group-item"
+        [routerLink]="['/users/' + post.id]"
+        [state]="{ tracingId: 123, scroll: [window.scrollX, window.scrollY] }"
+      >
+        {{ post.title }} / {{ post.body }}
+      </li>
+      <!-- <li class="list-group-item" (click)="navigate(post)">
+        {{ post.title }} / {{ post.body }}
+      </li> -->
+    </ng-container>
+  </ng-container>
+  <ng-template #Loading> Loading... </ng-template>
+</ul>
